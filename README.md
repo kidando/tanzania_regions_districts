@@ -1,5 +1,5 @@
 # Tanzania Regions and Districts
-SQL for creating minimal regions and districts tables in your database system.
+SQL for creating regions and districts tables for Tanzania in your database system.
 
 The information was taken from wikipedia
 - https://en.wikipedia.org/wiki/Regions_of_Tanzania
