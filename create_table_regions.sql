@@ -1,57 +1,11 @@
-# Tanzania Regions and Districts
-SQL for creating minimal regions and districts tables in your database system.
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-The information was taken from wikipedia
-- https://en.wikipedia.org/wiki/Regions_of_Tanzania
-
-Below is the sql contained in the file. Region IDs have already been populated in the Districts table. 
-
-```sql
-/* REGIONS */
-CREATE TABLE IF NOT EXISTS `regions` (
-  `id` int(2) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
-
-/*!40000 ALTER TABLE `regions` DISABLE KEYS */;
-INSERT INTO `regions` (`id`, `name`) VALUES
-	(1, 'Arusha'),
-	(2, 'Dar es Salaam'),
-	(3, 'Dodoma'),
-	(4, 'Geita'),
-	(5, 'Iringa'),
-	(6, 'Kagera'),
-	(7, 'Katavi'),
-	(8, 'Kigoma'),
-	(9, 'Kilimanjaro'),
-	(10, 'Lindi'),
-	(11, 'Manyara'),
-	(12, 'Mara'),
-	(13, 'Mbeya'),
-	(14, 'Mjini Magharibi'),
-	(15, 'Morogoro'),
-	(16, 'Mtwara'),
-	(17, 'Mwanza'),
-	(18, 'Njombe'),
-	(19, 'Pemba North'),
-	(20, 'Pemba South'),
-	(21, 'Pwani'),
-	(22, 'Rukwa'),
-	(23, 'Ruvuma'),
-	(24, 'Shinyanga'),
-	(25, 'Simiyu'),
-	(26, 'Singida'),
-	(27, 'Songwe'),
-	(28, 'Tabora'),
-	(29, 'Tanga'),
-	(30, 'Unguja North'),
-	(31, 'Unguja South');
-
-
-
-    /* DISTRICTS */
-    CREATE TABLE IF NOT EXISTS `districts` (
+CREATE TABLE IF NOT EXISTS `districts` (
   `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `region_id` int(2) unsigned DEFAULT NULL,
   `name` varchar(64) DEFAULT NULL,
@@ -235,6 +189,50 @@ INSERT INTO `districts` (`id`, `region_id`, `name`) VALUES
 	(173, 30, 'Kaskazini B'),
 	(174, 31, 'Kati'),
 	(175, 31, 'Kusini');
+/*!40000 ALTER TABLE `districts` ENABLE KEYS */;
 
-```
+CREATE TABLE IF NOT EXISTS `regions` (
+  `id` int(2) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
+/*!40000 ALTER TABLE `regions` DISABLE KEYS */;
+INSERT INTO `regions` (`id`, `name`) VALUES
+	(1, 'Arusha'),
+	(2, 'Dar es Salaam'),
+	(3, 'Dodoma'),
+	(4, 'Geita'),
+	(5, 'Iringa'),
+	(6, 'Kagera'),
+	(7, 'Katavi'),
+	(8, 'Kigoma'),
+	(9, 'Kilimanjaro'),
+	(10, 'Lindi'),
+	(11, 'Manyara'),
+	(12, 'Mara'),
+	(13, 'Mbeya'),
+	(14, 'Mjini Magharibi'),
+	(15, 'Morogoro'),
+	(16, 'Mtwara'),
+	(17, 'Mwanza'),
+	(18, 'Njombe'),
+	(19, 'Pemba North'),
+	(20, 'Pemba South'),
+	(21, 'Pwani'),
+	(22, 'Rukwa'),
+	(23, 'Ruvuma'),
+	(24, 'Shinyanga'),
+	(25, 'Simiyu'),
+	(26, 'Singida'),
+	(27, 'Songwe'),
+	(28, 'Tabora'),
+	(29, 'Tanga'),
+	(30, 'Unguja North'),
+	(31, 'Unguja South');
+/*!40000 ALTER TABLE `regions` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
